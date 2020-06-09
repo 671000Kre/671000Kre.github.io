@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+
+<html>
+
+  <head>
+    <title>Mad Lib</title>
+    <script>
+  function generateMadLib() {
+	let name = document.getElementById("name").value;
+  let noun1 = document.getElementById("noun1").value;
+  let adjective1 = document.getElementById("adjective1").value;
+  let verb1 = document.getElementById("verb1").value;
+  let adjective2 = document.getElementById("adjective2").value;
+  let noun2 = document.getElementById("noun2").value;
+  let noun3 = document.getElementById("noun3").value;
+  
+	let div = document.getElementById("madlib");
+  
+  div.innerText = (
+  `${name}'s ${noun1} was feeling ${adjective1},
+  ${verb1} three ${adjective2} ${noun2} from off the ${noun3}.`
+  );
+}
+    </script>
+    <style>
+    	body {
+  background-image:url("https://tucsonjcc.org/wp-content/uploads/2019/07/goats-1-e1564081103515.jpg");
+  background-size: cover;
+}
+.rainbow {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation-name: MOVE-BG;
+  animation-duration: 10s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes MOVE-BG {
+   from {
+     transform: translateX(0) translateY(0) rotate(0deg);
+   }
+   to { 
+     transform: translateX(30%) translateY(500%) rotate(-180deg);
+   }
+}
+
+.container {
+  background-color: #ccffcc;
+  display: inline-block;
+}
+    </style>
+  </head>
+
+  <body>
+    <div class="rainbow">
+  	<h1>
+    	Nursery Rhyme Mad Lib
+    </h1>
+    </div>
+   <div class="container">
+   <form>
+      <label>Please enter a name:  </label> <br>
+      <input type="text" id="name"><br>
+      <label>Please enter a noun:  </label> <br>
+      <input type="text" id="noun1"><br>
+      <label>Please enter an adjective:  </label> <br>
+      <input type="text" id="adjective1"><br>
+      <label>Please enter a verb in past tense:  </label> <br>
+      <input type="text" id="verb1"><br>
+      <label>Please enter an adjective:  </label> <br>
+      <input type="text" id="adjective2"><br>
+      <label>Please enter a plural noun:  </label> <br>
+      <input type="text" id="noun2"><br>
+      <label>Please enter a noun:  </label> <br>
+      <input type="text" id="noun3"><br>
+      <br>
+     	<input type="button" id="Submit" value="Submit" onclick="generateMadLib();"> <br>
+    </form>
+    
+    <div id="madlib">
+      
+    </div>
+    </div>
+  </body>
+ 
+
+</html>
